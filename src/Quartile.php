@@ -25,7 +25,6 @@ class Quartile
      */
     public function getQuartiles($scores)
     {
-
         if (count($this->scores)+1 <= 3) {
             return Hapm_quarter_report::QUARTILE_NONE;
         }
