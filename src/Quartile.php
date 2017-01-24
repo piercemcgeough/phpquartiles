@@ -79,7 +79,7 @@ class Quartile
      * Validate that the scores array only contains numbers
      *
      * @return boolean
-     */    
+     */
     private function arrayOnlyContainsNumbers()
     {
         foreach ($this->scores as $score) {
