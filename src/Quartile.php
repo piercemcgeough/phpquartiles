@@ -10,7 +10,7 @@ class Quartile
     /**
      * Create a new Quartiles Instance
      */
-    public function __construct($scores = NULL)
+    public function __construct($scores = null)
     {
         if ($this->arrayOnlyContainsNumbers($scores) === true) {
             $this->scores = $scores;
@@ -53,7 +53,7 @@ class Quartile
     {
         $pos = (count($array) + 1) * $quartilePlace;
 
-        if ( fmod($pos, 1) == 0) {
+        if (fmod($pos, 1) == 0) {
             return $array[$pos-1];
         }
 
