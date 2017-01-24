@@ -6,7 +6,7 @@ class Quartile
 {
     private $scores;
 
-    public $quartiles;
+    private $quartiles;
 
     /**
      * Create a new Quartiles Instance
@@ -14,11 +14,11 @@ class Quartile
      */
     public function __construct(array $scores)
     {
-        if (!$this->arrayOnlyContainsNumbers($scores)) {
+        $this->scores = $scores;
+        
+        if (!$this->arrayOnlyContainsNumbers()) {
             throw new \Exceptioon('Scores can only contain numbers');
         }
-
-        $this->scores = $scores;
 
         $this->calculateQuartiles();
     }
@@ -80,9 +80,9 @@ class Quartile
      *
      * @return boolean
      */
-    private function arrayOnlyContainsNumbers($scores)
+    private function arrayOnlyContainsNumbers()
     {
-        foreach ($scores as $score) {
+        foreach ($this->scores as $score) {
             if (!is_numeric($score)) {
                 return false;
             }
