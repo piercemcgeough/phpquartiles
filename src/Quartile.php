@@ -15,9 +15,10 @@ class Quartile
     public function __construct(array $scores)
     {
         $this->scores = $scores;
-        
+
         if (!$this->arrayOnlyContainsNumbers()) {
-            throw new \Exceptioon('Scores can only contain numbers');
+            throw new \Exception('Scores can only contain numbers');
+            return;
         }
 
         $this->calculateQuartiles();
