@@ -21,7 +21,6 @@ class Quartile
     /**
      * Calculate the quartiles
      *
-     * @param array $this->scores
      * @return array
      */
     public function getQuartiles()
@@ -44,7 +43,7 @@ class Quartile
      * Use the params to work out the quartile specific to this $array
      *
      * @param $array
-     * @param $quartilePlace
+     * @param double $quartilePlace
      * @return float
      */
     public function getQuartile($array, $quartilePlace)
