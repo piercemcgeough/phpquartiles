@@ -1,6 +1,6 @@
 <?php
 
-namespace Phpquartiles;
+namespace PierceMcGeough\phpquartiles;
 
 class Quartile
 {

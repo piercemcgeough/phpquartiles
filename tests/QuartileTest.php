@@ -1,6 +1,6 @@
 <?php
 
-use Phpquartiles\Quartile;
+use PierceMcGeough\phpquartiles\Quartile;
 
 class QuartileTest extends \PHPUnit_Framework_TestCase
 {
