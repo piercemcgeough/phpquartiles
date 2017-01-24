@@ -14,15 +14,14 @@ class Quartile
     {
         if ($this->arrayOnlyContainsNumbers($scores) === true) {
             $this->scores = $scores;
-            $this->quartiles = $this->getQuartiles($scores);
+            $this->quartiles = $this->getQuartiles($this->scores);
         }
     }
 
     /**
      * Calculate the quartiles
      *
-     * @param array $scores
-     *
+     * @param array $this->scores
      * @return array
      */
     public function getQuartiles()
@@ -46,7 +45,6 @@ class Quartile
      *
      * @param $array
      * @param $quartilePlace
-     *
      * @return float
      */
     public function getQuartile($array, $quartilePlace)
