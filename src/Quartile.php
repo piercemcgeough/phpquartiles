@@ -18,7 +18,6 @@ class Quartile
 
         if (!$this->arrayOnlyContainsNumbers()) {
             throw new \Exception('Scores can only contain numbers');
-            return;
         }
 
         $this->calculateQuartiles();
