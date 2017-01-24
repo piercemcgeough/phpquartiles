@@ -20,6 +20,6 @@ class QuartileTest extends \PHPUnit_Framework_TestCase
             'second' => 11.99,
         ];
 
-        $this->assertEquals($expected, $quartiles->quartiles);
+        $this->assertEquals($expected, $quartiles->getQuartiles());
     }
 }
