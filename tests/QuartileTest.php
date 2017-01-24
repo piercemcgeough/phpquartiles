@@ -5,7 +5,7 @@ use PierceMcGeough\phpquartiles\Quartile;
 class QuartileTest extends \PHPUnit_Framework_TestCase
 {
     /** @test */
-    function can_get_quartiles()
+    public function can_get_quartiles()
     {
         // arrange
         $scoresArray = [12.47, 8.91, 11.5, 9.86, 2.87, 15, 7.02, 4.68, 4.5];
