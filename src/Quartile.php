@@ -10,10 +10,12 @@ class Quartile
     /**
      * Create a new Quartiles Instance
      */
-    public function __construct($scores)
+    public function __construct($scores = null)
     {
-        $this->scores = $scores;
-        $this->quartiles = $this->getQuartiles($scores);
+        if ($this->arrayOnlyContainsNumbers($scores) === true) {
+            $this->scores = $scores;
+            $this->quartiles = $this->getQuartiles($scores);
+        }
     }
 
     /**
@@ -23,10 +25,10 @@ class Quartile
      *
      * @return array
      */
-    public function getQuartiles($scores)
+    public function getQuartiles()
     {
         if (count($this->scores)+1 <= 3) {
-            return Hapm_quarter_report::QUARTILE_NONE;
+            return;
         }
 
         sort($this->scores, SORT_NUMERIC);
@@ -63,5 +65,16 @@ class Quartile
         $difference = $upper_num - $lower_num;
 
         return round($lower_num + ($difference * $fraction), 2);
+    }
+
+    private function arrayOnlyContainsNumbers($scores)
+    {
+        foreach ($scores as $score) {
+            if (!is_numeric($score)) {
+                return false;
+            }
+        }
+
+        return true;
     }
 }
