@@ -51,7 +51,7 @@ class Quartile
     {
         $pos = (count($array) + 1) * $quartilePlace;
 
-        if ( fmod($pos, 1) == 0) {
+        if (fmod($pos, 1) == 0) {
             return $array[$pos-1];
         }
 
