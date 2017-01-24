@@ -1,18 +1,18 @@
 {
-    "name": ":vendor/:package_name",
+    "name": "PierceMcGeough/phpquartiles",
     "type": "library",
-    "description": ":package_description",
+    "description": "PHP package for working out quartile values and placements based on a numeric array",
     "keywords": [
-        ":vendor",
-        ":package_name"
+        "PierceMcGeough",
+        "phpquartiles"
     ],
-    "homepage": "https://github.com/:vendor/:package_name",
+    "homepage": "https://github.com/PierceMcGeough/phpquartiles",
     "license": "MIT",
     "authors": [
         {
-            "name": ":author_name",
-            "email": ":author_email",
-            "homepage": ":author_website",
+            "name": "Pierce McGeough",
+            "email": "pmcgeough@hotmail.co.uk",
+            "homepage": "https://github.com/PierceMcGeough",
             "role": "Developer"
         }
     ],
@@ -25,12 +25,12 @@
     },
     "autoload": {
         "psr-4": {
-            ":vendor\\:package_name\\": "src"
+            "PierceMcGeough\\phpquartiles\\": "src"
         }
     },
     "autoload-dev": {
         "psr-4": {
-            ":vendor\\:package_name\\": "tests"
+            "PierceMcGeough\\phpquartiles\\": "tests"
         }
     },
     "scripts": {
