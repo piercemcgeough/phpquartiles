@@ -9,19 +9,6 @@
 
 PHP package for working out quartile values and placements based on a numeric array.
 
-## Structure
-
-If any of the following are applicable to your project, then the directory structure should follow industry best practises by being named the following.
-
-```
-bin/        
-config/
-src/
-tests/
-vendor/
-```
-
-
 ## Install
 
 Via Composer
@@ -33,8 +20,9 @@ $ composer require PierceMcGeough/phpquartiles
 ## Usage
 
 ``` php
-$skeleton = new PierceMcGeough\phpquartiles();
-echo $skeleton->echoPhrase('Hello, League!');
+$scoresArray = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15];
+$quartiles = new PierceMcGeough\phpquartiles\Quartile();
+echo $quartiles->quartiles;
 ```
 
 ## Change log

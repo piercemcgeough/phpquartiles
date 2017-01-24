@@ -10,7 +10,7 @@ class Quartile
     /**
      * Create a new Quartiles Instance
      */
-    public function __construct($scores)
+    public function __construct($this->scores)
     {
         $this->scores = $scores;
         $this->quartiles = $this->getQuartiles($scores);
@@ -26,16 +26,16 @@ class Quartile
     public function getQuartiles($scores)
     {
 
-        if (count($scores)+1 <= 3) {
+        if (count($this->scores)+1 <= 3) {
             return Hapm_quarter_report::QUARTILE_NONE;
         }
 
-        sort($scores, SORT_NUMERIC);
+        sort($this->scores, SORT_NUMERIC);
 
         return [
-            'lowest' => $this->getQuartile($scores, 0.25),
-            'third'  => $this->getQuartile($scores, 0.50),
-            'second' => $this->getQuartile($scores, 0.75)
+            'lowest' => $this->getQuartile($this->scores, 0.25),
+            'third'  => $this->getQuartile($this->scores, 0.50),
+            'second' => $this->getQuartile($this->scores, 0.75)
         ];
     }
 
