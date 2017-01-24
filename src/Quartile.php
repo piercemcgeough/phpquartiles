@@ -10,7 +10,7 @@ class Quartile
     /**
      * Create a new Quartiles Instance
      */
-    public function __construct($scores = NULL)
+    public function __construct($scores = null)
     {
         if ($this->arrayOnlyContainsNumbers($scores) === true) {
             $this->scores = $scores;
