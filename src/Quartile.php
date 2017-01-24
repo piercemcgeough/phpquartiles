@@ -10,7 +10,7 @@ class Quartile
     /**
      * Create a new Quartiles Instance
      */
-    public function __construct($this->scores)
+    public function __construct($scores)
     {
         $this->scores = $scores;
         $this->quartiles = $this->getQuartiles($scores);
