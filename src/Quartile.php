@@ -4,6 +4,9 @@ namespace PierceMcGeough\phpquartiles;
 
 class Quartile
 {
+    public $scores;
+    public $quartiles;
+
     /**
      * Create a new Quartiles Instance
      */
@@ -20,7 +23,7 @@ class Quartile
      *
      * @return array
      */
-    function getQuartiles($scores)
+    public function getQuartiles($scores)
     {
 
         if (count($scores)+1 <= 3) {
@@ -45,7 +48,7 @@ class Quartile
      *
      * @return float
      */
-    function getQuartile($array, $quartilePlace)
+    public function getQuartile($array, $quartilePlace)
     {
         $pos = (count($array) + 1) * $quartilePlace;
 
