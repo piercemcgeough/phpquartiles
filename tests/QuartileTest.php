@@ -15,10 +15,11 @@ class QuartileTest extends \PHPUnit_Framework_TestCase
 
         // assert
         $expected = [
-            [lowest] => 4.59,
-            [third] => 8.91,
-            [second] => 11.99,
+            'lowest' => 4.59,
+            'third' => 8.91,
+            'second' => 11.99,
         ];
-        $this->assertEquals($expected, $quartiles);
+
+        $this->assertEquals($expected, $quartiles->quartiles);
     }
 }
