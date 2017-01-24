@@ -13,7 +13,7 @@ class ExampleTest extends \PHPUnit_Framework_TestCase
     }
 
     /** @test */
-    function test_false_is_false()
+    public function test_false_is_false()
     {
         $this->assertFalse(false);
     }
