@@ -5,8 +5,8 @@ namespace PierceMcGeough\phpquartiles;
 class Quartile
 {
     private $scores;
-    
-    private $quartiles;
+
+    public $quartiles;
 
     /**
      * Create a new Quartiles Instance
@@ -14,12 +14,12 @@ class Quartile
      */
     public function __construct(array $scores)
     {
-        if (!$this->arrayOnlyContainsNumbers()) {
+        if (!$this->arrayOnlyContainsNumbers($scores)) {
             throw new \Exceptioon('Scores can only contain numbers');
         }
-       
+
         $this->scores = $scores;
-        
+
         $this->calculateQuartiles();
     }
 
@@ -40,7 +40,7 @@ class Quartile
             'second' => $this->getQuartile(0.75)
         ];
     }
-    
+
     /**
      * Get the quartiles
      *
@@ -79,10 +79,10 @@ class Quartile
      * Validate that the scores array only contains numbers
      *
      * @return boolean
-     */    
-    private function arrayOnlyContainsNumbers()
+     */
+    private function arrayOnlyContainsNumbers($scores)
     {
-        foreach ($this->scores as $score) {
+        foreach ($scores as $score) {
             if (!is_numeric($score)) {
                 return false;
             }
