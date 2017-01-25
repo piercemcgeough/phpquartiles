@@ -5,7 +5,7 @@ use PierceMcGeough\phpquartiles\Quartile;
 class PlacementTest extends \PHPUnit_Framework_TestCase
 {
     /** @test */
-    function it_correctly_places_the_given_score()
+    public function it_correctly_places_the_given_score()
     {
         $scoresArray = [12.47, 8.91, 11.5, 9.86, 2.87, 15, 7.02, 4.68, 4.5];
         $quartiles = new Quartile($scoresArray);
@@ -22,7 +22,7 @@ class PlacementTest extends \PHPUnit_Framework_TestCase
     }
 
     /** @test */
-    function it_correctly_places_the_given_score_inversed()
+    public function it_correctly_places_the_given_score_inversed()
     {
         $scoresArray = [12.47, 8.91, 11.5, 9.86, 2.87, 15, 7.02, 4.68, 4.5];
         $quartiles = new Quartile($scoresArray);

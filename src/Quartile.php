@@ -125,7 +125,6 @@ class Quartile
 
     public function getPlacementInverse()
     {
-
     }
 
     /**
@@ -138,7 +137,7 @@ class Quartile
      *
      * @return boolean
      */
-    function belongsIn($q1, $q2, $value)
+    public function belongsIn($q1, $q2, $value)
     {
         if ($this->quartiles[$q1] == $this->quartiles[$q2]) { // Spans multiples
             return ($value >= $this->quartiles[$q1] &&  $value <= $this->quartiles[$q2]);
@@ -156,10 +155,10 @@ class Quartile
      *
      * @return string
      */
-    function extractBelongsIn($belongsIn)
+    public function extractBelongsIn($belongsIn)
     {
         // Find the first TRUE value from bottom to top (hence array_reverse)
-        foreach(array_reverse($belongsIn) as $placement => $active) {
+        foreach (array_reverse($belongsIn) as $placement => $active) {
             if ($active) {
                 return $placement;
             }
