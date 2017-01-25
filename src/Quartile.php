@@ -35,9 +35,9 @@ class Quartile
         sort($this->scores, SORT_NUMERIC);
 
         $this->quartiles = [
-            'first' => $this->getQuartile(0.25),
-            'second'  => $this->getQuartile(0.50),
-            'third' => $this->getQuartile(0.75)
+            'q1' => $this->getQuartile(0.25),
+            'q2' => $this->getQuartile(0.50),
+            'q3' => $this->getQuartile(0.75)
         ];
     }
 
@@ -62,7 +62,7 @@ class Quartile
     /**
      * @return numeric
      */
-    public function getSecondQuartile()
+    public function getMedianQuartile()
     {
         return $this->getQuartile(0.50);
     }
@@ -70,9 +70,9 @@ class Quartile
     /**
      * @return numeric
      */
-    public function getMedianQuartile()
+    public function getSecondQuartile()
     {
-        return $this->getQuartile(0.50);
+        return $this->getMedianQuartile();
     }
 
     /**
@@ -105,6 +105,67 @@ class Quartile
         $difference = $upper_num - $lower_num;
 
         return round($lower_num + ($difference * $fraction), 2);
+    }
+
+    public function getPlacement($value)
+    {
+        $belongsIn = [
+            'LOWEST_QUARTILE' => $value <= $this->quartiles['q1'],
+            'SECOND_QUARTILE' => $this->belongsIn('q1', 'q2', $value),
+            'THIRD_QUARTILE' => $this->belongsIn('q2', 'q3', $value),
+            'HIGHEST_QUARTILE' => $value > $this->quartiles['q3'],
+        ];
+
+        if ($belongsIn['SECOND_QUARTILE'] && $belongsIn['THIRD_QUARTILE'] && $value >= $this->quartiles['q3']) {
+            $belongsIn['HIGHEST_QUARTILE'] = true;
+        }
+
+        return $this->extractBelongsIn($belongsIn);
+    }
+
+    public function getPlacementInverse()
+    {
+
+    }
+
+    /**
+     * Check if $value belongs in a quartile
+     *
+     * @param array $quartiles
+     * @param string $q1
+     * @param string $q2
+     * @param float $value
+     *
+     * @return boolean
+     */
+    function belongsIn($q1, $q2, $value)
+    {
+        if ($this->quartiles[$q1] == $this->quartiles[$q2]) { // Spans multiples
+            return ($value >= $this->quartiles[$q1] &&  $value <= $this->quartiles[$q2]);
+        } else {
+            return ($value > $this->quartiles[$q1] &&  $value <= $this->quartiles[$q2]);
+        }
+
+        return false;
+    }
+
+    /**
+     * Find the first TRUE value
+     *
+     * @param array $belongsIn
+     *
+     * @return string
+     */
+    function extractBelongsIn($belongsIn)
+    {
+        // Find the first TRUE value from bottom to top (hence array_reverse)
+        foreach(array_reverse($belongsIn) as $placement => $active) {
+            if ($active) {
+                return $placement;
+            }
+        }
+
+        return 'NONE';
     }
 
     /**

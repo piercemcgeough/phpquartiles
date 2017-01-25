@@ -14,9 +14,9 @@ class QuartileTest extends \PHPUnit_Framework_TestCase
     public function it_can_return_all_quartiles()
     {
         $expected = [
-            'first' => 4.59,
-            'second' => 8.91,
-            'third' => 11.99,
+            'q1' => 4.59,
+            'q2' => 8.91,
+            'q3' => 11.99,
         ];
 
         $this->assertEquals($expected, $this->quartiles->getAllQuartiles());
