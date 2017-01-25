@@ -35,9 +35,9 @@ class Quartile
         sort($this->scores, SORT_NUMERIC);
 
         $this->quartiles = [
-            'lowest' => $this->getQuartile(0.25),
-            'third'  => $this->getQuartile(0.50),
-            'second' => $this->getQuartile(0.75)
+            'first' => $this->getQuartile(0.25),
+            'second'  => $this->getQuartile(0.50),
+            'third' => $this->getQuartile(0.75)
         ];
     }
 
@@ -46,9 +46,41 @@ class Quartile
      *
      * @return array|void
      */
-    public function getQuartiles()
+    public function getAllQuartiles()
     {
         return $this->quartiles;
+    }
+
+    /**
+     * @return numeric
+     */
+    public function getFirstQuartile()
+    {
+        return $this->getQuartile(0.25);
+    }
+
+    /**
+     * @return numeric
+     */
+    public function getSecondQuartile()
+    {
+        return $this->getQuartile(0.50);
+    }
+
+    /**
+     * @return numeric
+     */
+    public function getMedianQuartile()
+    {
+        return $this->getQuartile(0.50);
+    }
+
+    /**
+     * @return numeric
+     */
+    public function getThirdQuartile()
+    {
+        return $this->getQuartile(0.75);
     }
 
     /**
