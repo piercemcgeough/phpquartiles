@@ -31,7 +31,7 @@ class QuartileTest extends \PHPUnit_Framework_TestCase
     /** @test */
     public function it_can_return_the_median_quartile()
     {
-        $this->assertEquals(8.91, $this->quartiles->getMedianQuartile3());
+        $this->assertEquals(8.91, $this->quartiles->getMedianQuartile());
     }
 
     /** @test */

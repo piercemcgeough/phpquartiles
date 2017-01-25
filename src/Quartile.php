@@ -56,7 +56,7 @@ class Quartile
      */
     public function getFirstQuartile()
     {
-        return $this->getQuartile(0.25);
+        return $this->quartiles['q1'];
     }
 
     /**
@@ -64,7 +64,7 @@ class Quartile
      */
     public function getMedianQuartile()
     {
-        return $this->getQuartile(0.50);
+        return $this->quartiles['q2'];
     }
 
     /**
@@ -80,7 +80,7 @@ class Quartile
      */
     public function getThirdQuartile()
     {
-        return $this->getQuartile(0.75);
+        return $this->quartiles['q3'];
     }
 
     /**
@@ -123,15 +123,9 @@ class Quartile
         return $this->extractBelongsIn($belongsIn);
     }
 
-    public function getPlacementInverse()
-    {
-
-    }
-
     /**
      * Check if $value belongs in a quartile
      *
-     * @param array $quartiles
      * @param string $q1
      * @param string $q2
      * @param float $value
