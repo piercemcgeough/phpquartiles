@@ -123,6 +123,18 @@ class Quartile
         return $this->extractBelongsIn($belongsIn);
     }
 
+    public function getPlacementInverse($value)
+    {
+        $belongsIn = [
+            'LOWEST_QUARTILE'   => $value > $this->quartiles['q3'],
+            'THIRD_QUARTILE'    => $this->belongsIn('q1', 'q3', $value),
+            'SECOND_QUARTILE'   => $this->belongsIn('q2', 'q3', $value),
+            'HIGHEST_QUARTILE'  => $value <= $this->quartiles['q1'],
+        ];
+
+        return $this->extractBelongsIn($belongsIn);
+    }
+
     /**
      * Check if $value belongs in a quartile
      *
