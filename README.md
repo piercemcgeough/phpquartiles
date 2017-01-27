@@ -9,21 +9,63 @@
 
 PHP package for working out quartile values and placements based on a numeric array.
 
+phpquartiles will return the 1st, 2nd and 3rd quartiles. You can also then find the quartile placement of a given score.
+
 ## Install
 
 Via Composer
 
-``` bash
-$ composer require PierceMcGeough/phpquartiles
-```
+`$ composer require PierceMcGeough/phpquartiles`
 
 ## Usage
 
-``` php
+```
 $scoresArray = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15];
 $quartiles = new PierceMcGeough\phpquartiles\Quartile();
-echo $quartiles->quartiles;
 ```
+
+### Quartile Commands
+`$quartiles->getAllQuartiles();`
+
+    // returns
+    [
+        [q1] => 4
+        [q2] => 8
+        [q3] => 12
+    ]
+
+`$quartiles->getFirstQuartile();`
+
+    // returns 
+    4
+
+`$quartiles->getMedianQuartile();`
+
+    // returns
+    8
+
+`$quartiles->getSecondQuartile();`
+
+    // alias of getMedianQuartile
+    // returns
+    8
+
+`$quartiles->getThirdQuartile();`
+
+    // returns
+    12
+
+### Placement Commands
+`$quartiles->getPlacement(15);`
+
+    // returns
+    HIGHEST_QUARTILE
+
+`$quartiles->getPlacementInverse(15);`
+
+    // returns
+    LOWEST_QUARTILE
+
 
 ## Change log
 

@@ -4,19 +4,19 @@ All Notable changes to `phpquartiles` will be documented in this file.
 
 Updates should follow the [Keep a CHANGELOG](http://keepachangelog.com/) principles.
 
-## NEXT - YYYY-MM-DD
+## NEXT - 2017-01-27
 
 ### Added
-- Nothing
+- Initial Release
 
 ### Deprecated
-- Nothing
+- Initial Release
 
 ### Fixed
-- Nothing
+- Initial Release
 
 ### Removed
-- Nothing
+- Initial Release
 
 ### Security
-- Nothing
+- Initial Release
