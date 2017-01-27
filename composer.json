@@ -1,5 +1,5 @@
 {
-    "name": "PierceMcGeough/phpquartiles",
+    "name": "piercemcgeough/phpquartiles",
     "type": "library",
     "description": "PHP package for working out quartile values and placements based on a numeric array",
     "keywords": [
