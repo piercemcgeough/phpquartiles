@@ -25,47 +25,70 @@ $quartiles = new PierceMcGeough\phpquartiles\Quartile();
 ```
 
 ### Quartile Commands
-`$quartiles->getAllQuartiles();`
+```
+$quartiles->getAllQuartiles();
+/**
+ *  returns
+ *
+ *  [
+ *      [q1] => 4
+ *      [q2] => 8
+ *      [q3] => 12
+ *  ]
+ */
 
-    // returns
-    [
-        [q1] => 4
-        [q2] => 8
-        [q3] => 12
-    ]
 
-`$quartiles->getFirstQuartile();`
+$quartiles->getFirstQuartile();
+/**
+ *  returns
+ *
+ *  4
+ */
 
-    // returns 
-    4
 
-`$quartiles->getMedianQuartile();`
+$quartiles->getMedianQuartile();
+/**
+ *  returns
+ *
+ *  8
+ */
 
-    // returns
-    8
 
-`$quartiles->getSecondQuartile();`
+$quartiles->getSecondQuartile();
+/**
+ *  alias of getMedianQuartile()
+ *  returns
+ *
+ *  8
+ */
 
-    // alias of getMedianQuartile
-    // returns
-    8
 
-`$quartiles->getThirdQuartile();`
+$quartiles->getThirdQuartile();
+/**
+ *  returns
+ *
+ *  12
+ */
+```
 
-    // returns
-    12
 
 ### Placement Commands
-`$quartiles->getPlacement(15);`
+```
+$quartiles->getPlacement(15);
+/**
+ *  returns
+ *
+ *  HIGHEST_QUARTILE
+ */
 
-    // returns
-    HIGHEST_QUARTILE
 
-`$quartiles->getPlacementInverse(15);`
-
-    // returns
-    LOWEST_QUARTILE
-
+$quartiles->getPlacementInverse(15);
+/**
+ *  returns
+ *
+ *  LOWEST_QUARTILE
+ */
+```
 
 ## Change log
 
