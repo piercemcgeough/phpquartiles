@@ -56,7 +56,7 @@ class PlacementTest extends \PHPUnit_Framework_TestCase
     }
 
     /** @test */
-    function it_correctly_inverses_and_places_the_given_scores_2()
+    public function it_correctly_inverses_and_places_the_given_scores_2()
     {
         $scoresArray = [91, 80, 79.4, 75, 73, 73, 73, 70, 70, 70, 69, 61, 55, 54.55, 43.84, 41, 35, 30, 10];
         $quartiles = new Quartile($scoresArray);
@@ -71,7 +71,6 @@ class PlacementTest extends \PHPUnit_Framework_TestCase
         $this->assertEquals('SECOND_QUARTILE', $quartiles->getPlacementInverse(73));
         $this->assertEquals('LOWEST_QUARTILE', $quartiles->getPlacementInverse(73.01));
         $this->assertEquals('LOWEST_QUARTILE', $quartiles->getPlacementInverse(74));
-
     }
 
     /** @test */
